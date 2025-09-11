@@ -11,7 +11,7 @@ import chrome from 'chrome-aws-lambda'
 import dotenv from 'dotenv'
 import puppeteer, { type Viewport } from 'puppeteer-core'
 
-import { defaultLocale } from '../intl.config.json'
+import { defaultLocale } from '../web/intl.config.json'
 import { isSocialImageDifferent } from './utils'
 
 dotenv.config()
@@ -101,7 +101,7 @@ async function main({ argv }) {
     )
   }
 
-  const { sanity: sanityConfig } = await import('../env.config.mjs')
+  const { sanity: sanityConfig } = await import('../web/env.config.mjs')
 
   const { projectId, dataset, apiVersion, useCdn, token } = sanityConfig
 

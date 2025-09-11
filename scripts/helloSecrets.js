@@ -9,7 +9,7 @@ async function main({ argv }) {
   // - run: node scripts/helloSecrets ${{ github.event.inputs.documentId }}
   // just so it's easier to reuse
   // maybe use https://github.com/vercel/arg to parse the args
-  const { sanity: sanityConfig } = await import('../env.config.mjs')
+  const { sanity: sanityConfig } = await import('../web/env.config.mjs')
 
   const { projectId, dataset, apiVersion, useCdn, token } = sanityConfig
 

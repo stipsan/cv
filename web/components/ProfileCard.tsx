@@ -1,6 +1,6 @@
 import { BadgeCheckIcon, PrinterIcon } from '@heroicons/react/outline'
 import { differenceInYears } from 'date-fns'
-import type { UnlockProps } from 'hooks/useUnlocked'
+import type { UnlockProps } from 'web/hooks/useUnlocked'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -93,7 +93,7 @@ export default memo(function ProfileCard({
               <a
                 href={new URL(
                   locale === defaultLocale ? '/' : `/${locale}`,
-                  'https://cv.cocody.dev/'
+                  'https://cv.creativecody.dev/'
                 ).toString()}
                 className="hidden items-center rounded-lg border border-transparent bg-slate-100 px-5 py-2 text-sm font-medium text-slate-500 print:inline-flex "
               >

@@ -9,8 +9,8 @@ import { deskTool } from 'sanity/desk'
 import { presentationTool } from 'sanity/presentation'
 
 import SocialMediaCardPreview from './components/SocialMediaCardPreview'
-import { sanity as sanityConfig } from './env.config.mjs'
-import i18n from './intl.config.json'
+import { sanity as sanityConfig } from '../web/env.config.mjs'
+import i18n from '../intl.config.json'
 
 const { projectId, dataset } = sanityConfig
 const STRUCTURE_CUSTOM_TYPES = ['settings', 'secrets']

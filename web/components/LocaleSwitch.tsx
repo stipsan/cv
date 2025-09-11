@@ -22,7 +22,7 @@ export default memo(function LocaleSwitch({
             hrefLang={locale}
             href={new URL(
               locale === defaultLocale ? '/' : `/${locale}`,
-              'https://cv.cocody.dev/'
+              'https://cv.creativecody.dev/'
             ).toString()}
           />
         ))}
@@ -30,14 +30,14 @@ export default memo(function LocaleSwitch({
           rel="canonical"
           href={new URL(
             currentLocale === defaultLocale ? '/' : `/${currentLocale}`,
-            'https://cv.cocody.dev/'
+            'https://cv.creativecody.dev/'
           ).toString()}
         />
         <meta
           property="og:url"
           content={new URL(
             currentLocale === defaultLocale ? '/' : `/${currentLocale}`,
-            'https://cv.cocody.dev/'
+            'https://cv.creativecody.dev/'
           ).toString()}
         />
       </Head>

@@ -1,23 +1,12 @@
 {
+  "name": "@repo/web",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
-    "prebuild:ci": "npx rimraf blazing-scripts",
-    "build:ci": "node scripts/buildBlazingScripts.mjs",
-    "ci:createSocialImage": "node blazing-scripts/createSocialImage.js",
-    "cli:createSocialImage": "node -r esbuild-register scripts/createSocialImage.ts",
-    "decrypt": "node decrypt",
     "dev": "next dev",
-    "encrypt": "node encrypt",
-    "format": "npx prettier --write . && npm run lint -- --fix",
     "lint": "next lint",
-    "start": "next start",
-    "test:hello:secrets": "node -r dotenv/config scripts/helloSecrets",
-    "test:workflow": "node -r dotenv/config scripts/manualWorkflow.mjs"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true
+    "start": "next start"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
@@ -79,6 +68,5 @@
     "type-fest": "^3.2.0",
     "typescript": "^5.3.3",
     "write-file-atomic": "^5.0.0"
-  },
-  "packageManager": "pnpm@10.15.1"
+  }
 }

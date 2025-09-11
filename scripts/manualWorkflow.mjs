@@ -1,4 +1,4 @@
-import { github } from '../env.config.mjs'
+import { github } from '../web/env.config.mjs'
 
 const res = await fetch(
   `https://api.github.com/repos/${github.repository}/actions/workflows/manual.yml/dispatches`,

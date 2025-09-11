@@ -41,7 +41,7 @@ export default memo(function Footer({
             className="text-slate-800"
             href={new URL(
               locale === defaultLocale ? '/' : `/${locale}`,
-              'https://cv.cocody.dev/'
+              'https://cv.creativecody.dev/'
             ).toString()}
             target="_blank"
             rel="noopener noreferrer"
@@ -54,7 +54,7 @@ export default memo(function Footer({
             className="text-slate-800"
             href={new URL(
               locale === defaultLocale ? '/' : `/${locale}`,
-              'https://cv.cocody.dev/'
+              'https://cv.creativecody.dev/'
             ).toString()}
             target="_blank"
             rel="noopener noreferrer"
@@ -62,7 +62,7 @@ export default memo(function Footer({
             {children}
           </a>
         ),
-        site: 'cv.cocody.dev',
+        site: 'cv.creativecody.dev',
       }),
     [date, defaultLocale, locale, t]
   )
@@ -141,7 +141,7 @@ const RelativeWhen = ({
   return (
     <a
       className="hover:underline focus:underline focus:outline-none print:hidden"
-      href="https://github.com/stipsan/cv.cocody.dev"
+      href="https://github.com/stipsan/cv"
       target="_blank"
       rel="noopener noreferrer"
     >
