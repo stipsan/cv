@@ -21,7 +21,7 @@ export default defineCliConfig({
   autoUpdates: true,
   vite: {
     define: {
-      WEB_URL: JSON.stringify(webUrl),
+      __WEB_URL__: JSON.stringify(webUrl),
     },
   },
 })
