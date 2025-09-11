@@ -7,8 +7,16 @@
     "build": "next build",
     "start": "next start"
   },
+  "imports": {
+    "#sanity/client": "./sanity/client.ts"
+  },
   "dependencies": {
     "@vercel/related-projects": "^1.0.0",
-    "next": "canary"
+    "next": "canary",
+    "next-sanity": "^11.1.0"
+  },
+  "devDependencies": {
+    "sanity": "catalog:",
+    "typescript": "catalog:"
   }
 }

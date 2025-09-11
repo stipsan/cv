@@ -1,4 +1,6 @@
 import { withRelatedProject } from '@vercel/related-projects'
+import { draftMode } from 'next/headers'
+import { VisualEditing } from 'next-sanity/visual-editing'
 
 export const metadata = {
   title: 'Next.js',
@@ -15,14 +17,18 @@ const studioUrl = withRelatedProject({
   defaultHost: 'http://localhost:3333',
 })
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const { isEnabled: isDraftMode } = await draftMode()
   return (
     <html lang="en">
-      <body data-studio-url={studioUrl}>{children}</body>
+      <body data-studio-url={studioUrl}>
+        {children}
+        {isDraftMode && <VisualEditing />}
+      </body>
     </html>
   )
 }

@@ -16,14 +16,6 @@ if (typeof __WEB_URL__ === 'undefined') {
 }
 const webUrl = new URL(__WEB_URL__)
 
-console.log(
-  'runtime',
-  process.env.VERCEL_RELATED_PROJECTS,
-  process.env.SANITY_STUDIO_VERCEL_RELATED_PROJECTS,
-  __WEB_URL__,
-  webUrl
-)
-
 const config = defineConfig({
   name: 'CV',
   projectId: process.env.SANITY_STUDIO_PROJECT_ID,
@@ -59,8 +51,7 @@ const config = defineConfig({
         previewUrl: {
           initial: webUrl.origin,
           previewMode: {
-            enable: '/api/preview',
-            disable: '/api/exit-preview',
+            enable: '/api/draft-mode',
           },
         },
       }),

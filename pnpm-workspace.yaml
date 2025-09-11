@@ -1,13 +1,13 @@
 packages:
- - studio
- - intl
- - web
+  - studio
+  - intl
+  - web
 
 catalog:
- '@sanity/cli': ^4.8.1
- '@sanity/vision': ^4.8.1
- sanity: ^4.8.1
- typescript: 5.9.2
+  '@sanity/cli': ^4.8.1
+  '@sanity/vision': ^4.8.1
+  sanity: ^4.8.1
+  typescript: 5.9.2
 
 overrides:
   typescript: 'catalog:'
