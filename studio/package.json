@@ -10,7 +10,9 @@
     "@repo/intl": "workspace:*",
     "@sanity/document-internationalization": "^1.1.1",
     "@sanity/icons": "^3.7.4",
+    "@sanity/vercel-protection-bypass": "^2.0.2",
     "@sanity/vision": "catalog:",
+    "@sanity/cli": "catalog:",
     "sanity": "catalog:",
     "styled-components": "^6.1.19"
   }

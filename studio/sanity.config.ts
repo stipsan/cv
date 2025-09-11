@@ -7,8 +7,15 @@ import { CogIcon, EditIcon, LockIcon } from '@sanity/icons'
 import { defineConfig } from 'sanity'
 import { presentationTool } from 'sanity/presentation'
 import { structureTool } from 'sanity/structure'
+import { vercelProtectionBypassTool } from '@sanity/vercel-protection-bypass'
 
 const STRUCTURE_CUSTOM_TYPES = ['settings', 'secrets']
+
+console.log(
+  'runtime',
+  process.env.VERCEL_RELATED_PROJECTS,
+  process.env.SANITY_STUDIO_VERCEL_RELATED_PROJECTS
+)
 
 const config = defineConfig({
   name: 'CV',
@@ -108,6 +115,7 @@ const config = defineConfig({
         //   }
         // },
       }),
+      vercelProtectionBypassTool(),
     ],
     {
       includeDeskTool: false,

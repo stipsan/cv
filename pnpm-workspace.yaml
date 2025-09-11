@@ -4,5 +4,6 @@ packages:
  - web
 
 catalog:
+ '@sanity/cli': ^4.8.1
  '@sanity/vision': ^4.8.1
  sanity: ^4.8.1
