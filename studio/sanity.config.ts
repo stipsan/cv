@@ -5,6 +5,7 @@ import {
 } from '@sanity/document-internationalization'
 import { CogIcon, EditIcon, LockIcon } from '@sanity/icons'
 import { vercelProtectionBypassTool } from '@sanity/vercel-protection-bypass'
+import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { presentationTool } from 'sanity/presentation'
 import { structureTool } from 'sanity/structure'
@@ -114,6 +115,7 @@ const config = defineConfig({
         // },
       }),
       vercelProtectionBypassTool(),
+      visionTool(),
     ],
     {
       includeDeskTool: false,
