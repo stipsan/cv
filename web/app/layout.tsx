@@ -7,6 +7,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { draftMode } from 'next/headers'
 import { VisualEditing } from 'next-sanity/visual-editing'
 
+import { SanityLive } from '#sanity/live'
+
 export default async function RootLayout({
   children,
 }: {
@@ -25,6 +27,7 @@ export default async function RootLayout({
       </head>
       <body className="print:[zoom:75%]">
         {children}
+        {isDraftMode && <SanityLive />}
         {isDraftMode && <VisualEditing />}
         <SpeedInsights />
         <Analytics />
