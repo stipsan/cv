@@ -41,6 +41,15 @@ const config = defineConfig({
   },
   plugins: withDocumentI18nPlugin(
     (pluginConfig) => [
+      presentationTool({
+        previewUrl: {
+          preview: '/',
+          previewMode: {
+            enable: '/api/preview',
+            disable: '/api/exit-preview',
+          },
+        },
+      }),
       structureTool({
         structure: (S, { schema }) => {
           // The `Settings` root list item
@@ -98,15 +107,6 @@ const config = defineConfig({
         //     ])
         //   }
         // },
-      }),
-      presentationTool({
-        previewUrl: {
-          preview: '/',
-          previewMode: {
-            enable: '/api/preview',
-            disable: '/api/exit-preview',
-          },
-        },
       }),
     ],
     {
