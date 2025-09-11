@@ -1,6 +1,8 @@
+'use cache'
+
 import Footer from '#components/Footer'
 
-export default function Index() {
+export default async function Index() {
   return (
     <>
       <div className="h-1 bg-gradient-to-r from-teal-400 to-blue-600" />

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     },
   },
   experimental: {
+    cacheComponents: true,
     reactCompiler: true,
   },
 } satisfies NextConfig

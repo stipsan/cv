@@ -1,3 +1,5 @@
+'use cache'
+
 import './globals.css'
 
 import { Analytics } from '@vercel/analytics/next'

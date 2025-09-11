@@ -10,9 +10,10 @@
   },
   "imports": {
     "#components/*": "./components/*.tsx",
-    "#sanity/client": "./sanity/client.ts"
+    "#sanity/*": "./sanity/*.ts"
   },
   "dependencies": {
+    "@sanity/client": "catalog:",
     "@tailwindcss/forms": "^0.5.3",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",

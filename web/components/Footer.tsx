@@ -10,13 +10,6 @@ const { version: react } = reactPackageJson
 const { version: sanity } = sanityPackageJson
 const { version: tailwind } = tailwindPackageJson
 
-console.log({
-  next,
-  react,
-  sanity,
-  tailwind,
-})
-
 export default function Footer() {
   // const t = useTranslations('Footer')
   // const intl = useIntl()
