@@ -1,7 +1,6 @@
 import type { NextRequest } from 'next/server'
-import { isSocialImageDifferent } from 'scripts/utils'
 
-import { github } from '../../env.config.mjs'
+import { github } from '../../../env.config.mjs'
 
 export const config = {
   runtime: 'experimental-edge',
@@ -16,30 +15,9 @@ const handler = async (req: NextRequest) => {
     })
   }
 
-  const jsonStart = new Date()
-  const data = await req.json()
-  const { _id: documentId } = data
-  const jsonDur = new Date().getTime() - jsonStart.getTime()
-
-  if (!isSocialImageDifferent(data)) {
-    return new Response(
-      JSON.stringify({
-        message: 'No changes detected, skipping',
-        payload: data,
-      }),
-      {
-        status: 200,
-        headers: {
-          'content-type': 'application/json',
-          'server-timing': `json;desc="await req.json";dur=${jsonDur}`,
-        },
-      }
-    )
-  }
-
-  const ghStart = new Date()
+  const start = new Date()
   const res = await fetch(
-    `https://api.github.com/repos/${github.repository}/actions/workflows/social.yml/dispatches`,
+    `https://api.github.com/repos/${github.repository}/actions/workflows/manual.yml/dispatches`,
     {
       method: 'POST',
       headers: {
@@ -48,16 +26,14 @@ const handler = async (req: NextRequest) => {
       },
       body: JSON.stringify({
         ref: github.ref,
-        inputs: { documentId, force: 'false' },
+        inputs: { documentId: searchParams.get('documentId') },
       }),
     }
   )
-  const ghDur = new Date().getTime() - ghStart.getTime()
 
   if (res.status !== 204) {
     console.log(
-      `https://api.github.com/repos/${github.repository}/actions/workflows/social.yml/dispatches`,
-      { documentId }
+      `https://api.github.com/repos/${github.repository}/actions/workflows/manual.yml/dispatches`
     )
     throw new Error(
       `Failed to trigger manual workflow: ${res.status} ${
@@ -68,13 +44,15 @@ const handler = async (req: NextRequest) => {
 
   return new Response(
     JSON.stringify({
-      message: 'Dispatched social.yml workflow',
+      message: 'Fired GitHub manual workflow from the Edge! 🎉',
     }),
     {
-      status: 201,
+      status: 200,
       headers: {
         'content-type': 'application/json',
-        'server-timing': `json;desc="await req.json";dur=${jsonDur},fetch;desc="GitHub API Fetch";dur=${ghDur}`,
+        'server-timing': `fetch;desc="GitHub API Fetch";dur=${
+          new Date().getTime() - start.getTime()
+        }`,
       },
     }
   )

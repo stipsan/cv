@@ -1,4 +1,4 @@
-import type { UnlockProps } from 'hooks/useUnlocked'
+import type { UnlockProps } from 'web/hooks/useUnlocked'
 import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 import { memo } from 'react'

@@ -119,3 +119,4 @@ studio/.env.development
 .sanity
 # these are scripts compiled from /scripts, they're create on the CI so it doesn't need to be version controlled
 blazing-scripts
+.env*.local

@@ -1,10 +1,10 @@
 import Cryptr from 'cryptr'
-import type { Unlocked } from 'hooks/useUnlocked'
+import type { Unlocked } from 'web/hooks/useUnlocked'
 import { sanityClient } from 'lib/sanity.server'
 import parsePhoneNumber from 'libphonenumber-js'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import encrypted from '../../encrypted.json'
+import encrypted from '../../../encrypted.json'
 
 type Data = Unlocked | { error: string }
 

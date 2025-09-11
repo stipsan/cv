@@ -6,7 +6,7 @@ import {
   XCircleIcon,
 } from '@heroicons/react/solid'
 import cx from 'classnames'
-import type { UnlockProps } from 'hooks/useUnlocked'
+import type { UnlockProps } from 'web/hooks/useUnlocked'
 import { useTranslations } from 'next-intl'
 import { memo, useRef, useState } from 'react'
 import { BottomSheet } from 'react-spring-bottom-sheet'

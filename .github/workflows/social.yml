@@ -22,8 +22,9 @@ jobs:
       group: ${{ github.event.inputs.documentId }}-${{ github.event.inputs.force }}
       cancel-in-progress: true
     steps:
-      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
-      - uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # v3
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: lts/*
       - id: cache
@@ -31,12 +32,12 @@ jobs:
         with:
           path: |
             ./blazing-scripts/createSocialImage.js
-          key: modules-${{ hashFiles('package-lock.json') }}-${{ hashFiles('scripts/*.ts') }}-${{ hashFiles('intl.config.json') }}
-      - run: npm install --ignore-scripts
+          key: modules-${{ hashFiles('pnpm-lock.yaml') }}-${{ hashFiles('scripts/*.ts') }}-${{ hashFiles('intl.config.json') }}
+      - run: pnpm install
         if: steps.cache.outputs.cache-hit != 'true'
-      - run: npm run build:ci
+      - run: pnpm build:ci
         if: steps.cache.outputs.cache-hit != 'true'
-      - run: npm run ci:createSocialImage ${{ github.event.inputs.documentId }} ${{ github.event.inputs.force }}
+      - run: pnpm ci:createSocialImage ${{ github.event.inputs.documentId }} ${{ github.event.inputs.force }}
         env:
           SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
           SANITY_API_WRITE_TOKEN: ${{ secrets.SANITY_API_WRITE_TOKEN }}
