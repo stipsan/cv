@@ -2,15 +2,15 @@
 
 import './globals.css'
 
+import SanityLiveClientComponent from '@sanity/next-loader/client-components/live'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { unstable_expireTag as expireTag } from 'next/cache'
 import { draftMode } from 'next/headers'
 import { VisualEditing } from 'next-sanity/visual-editing'
-import SanityLiveClientComponent from '@sanity/next-loader/client-components/live'
 
 import { client } from '#sanity/client'
-import { SanityLive } from '#sanity/live'
+// import { SanityLive } from '#sanity/live'
 
 export default async function RootLayout({
   children,
