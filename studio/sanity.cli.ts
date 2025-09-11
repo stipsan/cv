@@ -1,4 +1,10 @@
 import { defineCliConfig } from '@sanity/cli'
+import { withRelatedProject } from '@vercel/related-projects'
+
+const webUrl = withRelatedProject({
+  projectName: 'cv-web',
+  defaultHost: 'http://localhost:3000',
+})
 
 console.log(
   'build time',
@@ -13,4 +19,9 @@ export default defineCliConfig({
   },
   reactStrictMode: true,
   autoUpdates: true,
+  vite: {
+    define: {
+      WEB_URL: JSON.stringify(webUrl),
+    },
+  },
 })

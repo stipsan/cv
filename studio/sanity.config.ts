@@ -4,17 +4,24 @@ import {
   withDocumentI18nPlugin,
 } from '@sanity/document-internationalization'
 import { CogIcon, EditIcon, LockIcon } from '@sanity/icons'
+import { vercelProtectionBypassTool } from '@sanity/vercel-protection-bypass'
 import { defineConfig } from 'sanity'
 import { presentationTool } from 'sanity/presentation'
 import { structureTool } from 'sanity/structure'
-import { vercelProtectionBypassTool } from '@sanity/vercel-protection-bypass'
 
 const STRUCTURE_CUSTOM_TYPES = ['settings', 'secrets']
+
+if (typeof __WEB_URL__ === 'undefined') {
+  throw new Error('__WEB_URL__ is not defined, check your sanity.cli.ts')
+}
+const webUrl = new URL(__WEB_URL__)
 
 console.log(
   'runtime',
   process.env.VERCEL_RELATED_PROJECTS,
-  process.env.SANITY_STUDIO_VERCEL_RELATED_PROJECTS
+  process.env.SANITY_STUDIO_VERCEL_RELATED_PROJECTS,
+  __WEB_URL__,
+  webUrl
 )
 
 const config = defineConfig({
@@ -50,7 +57,7 @@ const config = defineConfig({
     (pluginConfig) => [
       presentationTool({
         previewUrl: {
-          preview: '/',
+          initial: webUrl.origin,
           previewMode: {
             enable: '/api/preview',
             disable: '/api/exit-preview',
