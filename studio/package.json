@@ -2,6 +2,7 @@
   "name": "@repo/studio",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "sanity dev",
     "build": "sanity build"
@@ -13,12 +14,16 @@
     "@sanity/icons": "^3.7.4",
     "@sanity/vercel-protection-bypass": "^2.0.2",
     "@sanity/vision": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "@vercel/related-projects": "^1.0.0",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "sanity": "catalog:",
-    "styled-components": "^6.1.19"
+    "styled-components": "catalog:"
   },
   "devDependencies": {
-    "babel-plugin-react-compiler": "19.1.0-rc.3",
+    "babel-plugin-react-compiler": "catalog:",
     "typescript": "catalog:"
   }
 }
