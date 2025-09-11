@@ -20,3 +20,6 @@ overrides:
   '@types/react': 'catalog:'
   '@types/react-dom': 'catalog:'
   typescript: 'catalog:'
+
+publicHoistPattern:
+  - '@sanity/next-loader'
