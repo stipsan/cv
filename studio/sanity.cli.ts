@@ -11,8 +11,9 @@ export default defineCliConfig({
     projectId: process.env.SANITY_STUDIO_PROJECT_ID,
     dataset: process.env.SANITY_STUDIO_DATASET,
   },
-  reactStrictMode: true,
   autoUpdates: true,
+  reactStrictMode: true,
+  reactCompiler: { target: '19' },
   vite: {
     define: {
       __WEB_URL__: JSON.stringify(webUrl),

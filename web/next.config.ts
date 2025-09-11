@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
       fullUrl: true,
     },
   },
+  experimental: {
+    reactCompiler: true,
+  },
 } satisfies NextConfig
 
 export default nextConfig

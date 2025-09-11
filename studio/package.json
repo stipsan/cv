@@ -18,6 +18,7 @@
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
+    "babel-plugin-react-compiler": "19.1.0-rc.3",
     "typescript": "catalog:"
   }
 }
