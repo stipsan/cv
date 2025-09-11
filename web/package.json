@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/related-projects": "^1.0.0",
     "next": "canary"
   }
 }

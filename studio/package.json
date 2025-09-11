@@ -8,12 +8,16 @@
   },
   "dependencies": {
     "@repo/intl": "workspace:*",
+    "@sanity/cli": "catalog:",
     "@sanity/document-internationalization": "^1.1.1",
     "@sanity/icons": "^3.7.4",
     "@sanity/vercel-protection-bypass": "^2.0.2",
     "@sanity/vision": "catalog:",
-    "@sanity/cli": "catalog:",
+    "@vercel/related-projects": "^1.0.0",
     "sanity": "catalog:",
     "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "typescript": "catalog:"
   }
 }
