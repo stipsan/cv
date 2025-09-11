@@ -1,0 +1,8 @@
+packages:
+ - studio
+ - intl
+ - web
+
+catalog:
+ '@sanity/vision': ^4.8.1
+ sanity: ^4.8.1

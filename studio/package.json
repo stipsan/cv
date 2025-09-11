@@ -1,0 +1,17 @@
+{
+  "name": "@repo/studio",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build"
+  },
+  "dependencies": {
+    "@repo/intl": "workspace:*",
+    "@sanity/document-internationalization": "^1.1.1",
+    "@sanity/icons": "^3.7.4",
+    "@sanity/vision": "catalog:",
+    "sanity": "catalog:",
+    "styled-components": "^6.1.19"
+  }
+}

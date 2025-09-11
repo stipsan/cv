@@ -3,3 +3,5 @@
 public/studio
 encrypted.json
 blazing-scripts
+pnpm-lock.yaml
+pnpm-workspace.yaml
