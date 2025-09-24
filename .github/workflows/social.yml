@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: lts/*
       - id: cache
-        uses: actions/cache@9b0c1fce7a93df8e3bb8926b0d6e9d89e92f20a7 # v3
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: |
             ./blazing-scripts/createSocialImage.js
