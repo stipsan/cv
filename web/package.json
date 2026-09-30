@@ -27,7 +27,7 @@
     "react": "catalog:",
     "react-dom": "catalog:",
     "styled-components": "catalog:",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
     "babel-plugin-react-compiler": "catalog:",
