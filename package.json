@@ -52,7 +52,7 @@
     "sanity": "3.28.0",
     "sanity-plugin-internationalized-array": "^1.10.8",
     "styled-components": "^5.3.6",
-    "zod": "^3.19.1"
+    "zod": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
