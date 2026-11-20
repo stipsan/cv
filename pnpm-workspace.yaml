@@ -8,11 +8,11 @@ catalog:
   '@types/react-dom': ^19.1.9
   '@sanity/cli': ^4.8.1
   '@sanity/client': ^7.11.1
-  '@sanity/vision': ^4.8.1
+  '@sanity/vision': ^5.31.2
   babel-plugin-react-compiler: 19.1.0-rc.3
   react: ^19.1.1
   react-dom: ^19.1.1
-  sanity: ^4.8.1
+  sanity: ^5.31.2
   styled-components: ^6.1.19
   typescript: 5.9.2
 
